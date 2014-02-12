@@ -33,7 +33,7 @@ HostKey <%= SSHD.path(:host_key) %>
 # Logging
 # obsoletes QuietMode and FascistLogging
 SyslogFacility AUTHPRIV
-#LogLevel INFO
+LogLevel INFO
 
 # Authentication:
 
@@ -110,7 +110,8 @@ GatewayPorts yes
 #ClientAliveInterval 0
 #ClientAliveCountMax 3
 #UseDNS yes
-#PidFile <%= SSHD.path("sshd.pid") %>
+#PidFile <%= VAR %>/pids/sshd.pid
+PidFile /dev/null
 #MaxStartups 10
 #PermitTunnel no
 #ChrootDirectory none
